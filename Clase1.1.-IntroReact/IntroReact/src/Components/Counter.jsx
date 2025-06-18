@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import "../assets/css/Counter.css";
 
-export default function Counter() {
-
-    const [counter, setCounter] = useState(0);
+export default function Counter({counter, setCounter}) {
 
     function handleSubstractButton() {
             if (counter <= 0) {

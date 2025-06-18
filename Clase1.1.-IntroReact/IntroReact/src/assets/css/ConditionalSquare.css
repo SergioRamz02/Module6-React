@@ -1,0 +1,21 @@
+.redBox{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 5px;
+    background-color: crimson;
+    color: white;
+}
+
+.blueBox{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+}
