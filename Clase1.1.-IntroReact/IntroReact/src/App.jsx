@@ -1,5 +1,6 @@
 import './App.css'
 import { useState } from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Card from './Components/Card'
 import Counter from './Components/Counter';
 import FilterableList from './Components/FilterableList';
@@ -9,6 +10,9 @@ import SquareContainer from './Components/SquareContainer';
 import FocusInput from './Components/FocusInput';
 import Parent from './Components/UseCallbackExample';
 import ContadorReducer from './Components/ContadorReducer';
+import Nav from './Components/Nav';
+import User from './Components/User';
+
 
 const alt = "cat-image";
 
@@ -21,6 +25,7 @@ function App() {
 
   return (
     <>
+    <BrowserRouter>
       <h1>Este es mi primer componente:</h1>
       <Card 
           src={"https://inaturalist-open-data.s3.amazonaws.com/photos/129658776/original.jpg"} 
@@ -37,19 +42,17 @@ function App() {
           alt={alt} 
           text={"Gato 3"}
       />
-      <Counter counter={counter} setCounter={setCounter}/>
-      <FilterableList />
-      <Timer />
-      <h1>Contador de los cuadros</h1>
-      <Counter counter={squareCounter} setCounter={setSquareCounter}/>
-      <SquareContainer>
-        {Array.from({ length: squareCounter }, (_, index) => (
-          <ConditionalSquare key={index} />
-        ))}
-      </SquareContainer>
-      <FocusInput />
-      <Parent></Parent>
-      <ContadorReducer />
+      <Nav/>
+      
+      <Routes>
+        <Route path='/' element={function Home (){return(<h1>Hola</h1>)}}/>
+        <Route path='/Counter' element={<Counter counter={counter} setCounter={setCounter}/>} />
+        <Route path='/FilterableList' element={<FilterableList />} />
+        <Route path='/Timer' element={<Timer />} />
+        <Route path='/User/:userId' element={<User/>}></Route>
+      </Routes>
+
+    </BrowserRouter>
     </>
   )
 }
