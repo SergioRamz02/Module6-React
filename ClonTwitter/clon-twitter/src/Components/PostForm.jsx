@@ -1,22 +1,21 @@
-import React from "react";
-import { useRef } from "react";
-import "../assets/styles/PostForm.css"
+import React, {useRef} from "react";
+import '../assets/Styles/PostForm.css'
 
-export default function PostForm ({posts,setPosts}){
+export default function PostForm({posts,setPosts}){
     const InputValue = useRef(null);
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault();
         
-        const newPost ={
+        const newPost = {
             username: "SergioRamírez",
             postText: InputValue.current.value,
             isLiked: false,
-            idPost: posts.length,
+            idPost: posts.length
         }
 
         setPosts([...posts, newPost]);
-        InputValue.current.value="";
+        InputValue.current.value = "";
         
     }
 
@@ -25,8 +24,8 @@ export default function PostForm ({posts,setPosts}){
             <input type="text" 
                    ref={InputValue}
                    placeholder="Escribe sobre tu publicación..."
-                    />
-            <button onClick={(e)=>handleSubmit(e)}>Publicar</button>
+            />
+            <button onClick={(e) => handleSubmit(e)}>Publicar</button>
         </form>
     )
 }

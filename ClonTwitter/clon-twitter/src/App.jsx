@@ -15,13 +15,10 @@ function App() {
         <PostForm posts={posts} setPosts={setPosts}/>
         <PostContainer>
           {posts.map((post, index) => {
-            return <PostItems username={post.username} postText={post.postText} isLiked={post.isLiked} index={index} key={key} posts={post} setPosts={setPosts} />
+            return <PostItems username={post.username} postText={post.postText} isLiked={post.isLiked} index={index} key={index} posts={posts} setPosts={setPosts}/>
           })}
         </PostContainer>
-
       </MainContaint>
-        
-  
     </>
   )
 }

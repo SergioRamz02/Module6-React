@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/styles/MainContaint.css"
+import "../assets/Styles/MainContaint.css"
 
 export default function MainContaint ({children}){
     return(
